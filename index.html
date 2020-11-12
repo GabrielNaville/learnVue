@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue</title>
+</head>
+<body>
+    <div id="app"> 
+        {{message}}
+    </div>
+
+    <div id="app-2">
+        <span v-bind:title='message'>
+            <br>
+            Para o mouse sobre mim e veja.
+        </span>
+    </div>
+
+    <div id="app-3">
+        <p v-if="seen">Agora você me viu</p>
+    </div>
+
+    <div id="app-4">
+        <ol>
+            <li v-for="(todo, index) in todos">
+                {{todo.text}} <br>
+                {{index}}
+            </li>
+        </ol>
+    </div>
+
+    <div id="app-5">
+        <p>{{message}}</p>
+        <button v-on:click="reverseMessage"> Inverter a Mensagem</button>
+    </div>
+
+    <div id="app-6">
+        <br>
+        Seu CPF é: 
+        <p>{{message}} 456.789.10</p> 
+        <input v-model="message">
+    </div>
+    
+    <div id="app-7">
+        <ol>
+            <todo-item2></todo-item2>
+        </ol>
+    </div>
+
+    <div id="app-8">
+        <ol>
+            <todo-item
+            v-for="(item,index) in groceryList"
+            v-bind:todo="item"
+            v-bind:key="index"
+            >
+            </todo-item>
+        </ol>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
